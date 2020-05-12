@@ -9,8 +9,8 @@ Compile_EXIOBASE <- function(year,type)
                "Industry" = read.csv(paste0(path$exio,"IO_industry_codes.csv")),
                "Demand" = read.csv(paste0(path$exio,"IO_finaldemand_codes.csv")) ) 
   
-  Uni <- list("Product" = Code$Product[1:200,c("Index","ProductEXIOCode")],
-              "Industry" = Code$Industry[1:163,c("Index","IndustryEXIOCode")],
+  Uni <- list("Product" = Code$Product[1:200,c("Index","ProductEXIOCode","ProductName")],
+              "Industry" = Code$Industry[1:163,c("Index","IndustryEXIOCode","IndustryName")],
               "Region" = read.csv(paste0(path$exio,"region_codes.csv"))
               )
   
@@ -109,7 +109,9 @@ Compile_EXIOBASE <- function(year,type)
               "A" = A,
               "L" = L,
               "x" = x,
-              "E" = E
+              "E" = E,
+              "Code" = Code,
+              "Uni" = Uni
               )
   
   return(obj)
