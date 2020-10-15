@@ -26,8 +26,3 @@ MRIO <<- Compile_EXIOBASE(2008,"PxP")   # Create EXIOBASE MRIO with material ext
 
 
 
-
-
-rowSums(MRIO$E)
-
-
